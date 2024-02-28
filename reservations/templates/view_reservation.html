@@ -1,5 +1,3 @@
-<!-- reservations/templates/view_reservation.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,13 +24,13 @@
         {% for reservation in reservations %}
         <li>
             <strong>Name:</strong> {{ reservation.name }}<br>
-            {% comment %} E-posta bilgisini gizle {% endcomment %}
+            {% comment %} Hide Email Information {% endcomment %}
             <strong>Email:</strong> ************<br>
             <strong>Date:</strong> {{ reservation.date }}<br>
             <strong>Time:</strong> {{ reservation.time }}<br>
             <strong>Number of Guests:</strong> {{ reservation.guests }}<br>
 
-            {% comment %} İptal etme butonu {% endcomment %}
+            {% comment %} Cancel Button {% endcomment %}
             <form method="post" action="{% url 'cancel_reservation' reservation.id %}">
                 {% csrf_token %}
                 <label for="cancel_email">Enter Your Email to Cancel:</label>

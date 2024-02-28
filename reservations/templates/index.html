@@ -4,59 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Melisa's Tapas Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background-color: #ff0000; /* Red background color */
-            color: #000000; /* Black text color */
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .navbar {
-            background-color: #000000; /* Black navbar background color */
-            overflow: hidden;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #555;
-        }
-        .content {
-            background-color: #ffffff; /* White content background color */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        p {
-            text-align: center;
-        }
+     /* styles.css */
+
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ff0000; /* Red background */
+    color: #ffffff; /* White text */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: #ff0000; /* Red navbar background */
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* White logo color */
+    margin-left: 20px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #ffffff; /* White text on hover */
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section h1 {
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #ffffff; /* White text */
+    font-size: 18px;
+}
+
+.about {
+    background-color: #ff0000; /* Red background for About Us section */
+}
+
+.events {
+    background-color: #ffffff; /* White background for Events section */
+    color: #ff0000; /* Red text for Events section */
+}
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="reservation_form.html">Reservations</a>
-    </div>
+    <header>
+        <div class="navbar">
+            <div class="logo">Melisa's Tapas Bar</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="reservation_form.html">Reservations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="content">
-        <h1>Welcome to Melisa's Tapas Restaurant</h1>
-        <p>This is the home page of Melisa's Tapas Restaurant. Please use the navigation bar to make reservations or return to the home page.</p>
-    </div>
+    <section id="about" class="section about">
+        <div class="content">
+            <h1>About Us</h1>
+            <p>Welcome to Melisa's Tapas Restaurant. We pride ourselves on offering a unique dining experience with authentic Spanish cuisine.</p>
+        </div>
+    </section>
+
+    <section id="events" class="section events">
+        <div class="content">
+            <h1>Events</h1>
+            <p>Check out our upcoming events and specials. Join us for live music nights, wine tastings, and more!</p>
+        </div>
+    </section>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

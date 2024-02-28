@@ -154,16 +154,20 @@
     <script>
         $(document).ready(function () {
             $('#timepicker').timepicker({
-                timeFormat: 'HH:mm',
-                interval: 30,
-                minTime: '09:00', // Set minimum time to 9:00 AM
-                maxTime: '22:00', // Set maximum time to 10:00 PM (22:00)
-                scrollbar: true,
-                disableTimeRanges: [
-                    ['00:00', '08:59'], // Disable time before 9:00 AM
-                    ['22:30', '23:59']  // Disable time after 10:00 PM (22:00)
-                ],
-            });
+    timeFormat: 'HH:mm',
+    interval: 30,
+    minTime: '09:00',
+    maxTime: '22:00',
+    scrollbar: true,
+    disableTimeRanges: [
+        ['00:00', '08:59'],
+        ['22:30', '23:59']
+    ],
+    dropdown: true, // This enables the scroll-down time picker
+    scrollbar: true, // This enables the scrollbar in the dropdown
+    zindex: 99999, // This ensures the dropdown appears on top of other elements
+});
+
         });
     
         function validateForm() {
