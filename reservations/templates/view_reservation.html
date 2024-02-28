@@ -1,0 +1,51 @@
+<!-- reservations/templates/view_reservation.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reservations</title>
+</head>
+
+<body>
+    <h1>View Reservations</h1>
+
+    <form method="post" action="{% url 'view_reservation' %}">
+        {% csrf_token %}
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">View Reservations</button>
+    </form>
+
+    {% if searched_name %}
+    {% if reservations %}
+    <h2>Reservations for {{ searched_name }}:</h2>
+    <ul>
+        {% for reservation in reservations %}
+        <li>
+            <strong>Name:</strong> {{ reservation.name }}<br>
+            {% comment %} E-posta bilgisini gizle {% endcomment %}
+            <strong>Email:</strong> ************<br>
+            <strong>Date:</strong> {{ reservation.date }}<br>
+            <strong>Time:</strong> {{ reservation.time }}<br>
+            <strong>Number of Guests:</strong> {{ reservation.guests }}<br>
+
+            {% comment %} İptal etme butonu {% endcomment %}
+            <form method="post" action="{% url 'cancel_reservation' reservation.id %}">
+                {% csrf_token %}
+                <label for="cancel_email">Enter Your Email to Cancel:</label>
+                <input type="email" id="cancel_email" name="cancel_email" required>
+                <button type="submit">Cancel Reservation</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No reservations found for the entered name.</p>
+    {% endif %}
+    {% endif %}
+</body>
+
+</html>
