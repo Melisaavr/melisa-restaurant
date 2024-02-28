@@ -19,7 +19,37 @@
 
         <!-- Notification area for displaying messages -->
         <div id="notification" class="notification"></div>
-        
+
+        <!-- Reservation form -->
+        <form method="post" action="{% url 'handle_form_submission' %}">
+            {% csrf_token %}
+            <!-- Input field for name -->
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Input field for email -->
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Input field for reservation date -->
+            <label for="date">Reservation Date:</label>
+            <input type="date" id="datepicker" name="date" required>
+
+            <!-- Input field for reservation time -->
+            <label for="time">Reservation Time:</label>
+            <input type="time" id="timepicker" name="time" min="10:00" max="22:00" step="1800" required>
+
+            <!-- Dropdown for selecting number of guests -->
+            <label for="guests">Number of Guests:</label>
+            <select id="guests" name="guests" required>
+                <option value="">Select</option>
+                {% for i in "1234" %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <br>
+            <br>
         </div>
 
 </body>
