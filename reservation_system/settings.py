@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 
-DEBUG = os.environ["DEBUG"] == 'True'
+# DEBUG = os.environ["DEBUG"] == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1",]
 
