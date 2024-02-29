@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<style>
+    /* Resetting default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #5a0000;
+        color: #ffffff;
+    }
+
+    /* Navbar styles */
+    .navbar {
+        background-color: #5a0000;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .navbar nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .navbar nav ul li {
+        margin-left: 20px;
+    }
+
+    .navbar nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .navbar nav ul li a:hover {
+        color: #000000;
+    }
+
+    /* Section styles */
+    .section {
+        padding: 50px 20px;
+    }
+
+    .section.about {
+        background-color: #5a0000;
+    }
+
+    .section.events {
+        background-color: #000000;
+        color: #5a0000;
+    }
+
+    /* Content styles */
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .content h1,
+    .content p {
+        margin-bottom: 20px;
+    }
+</style>
+{% endblock%}
+
+{% block content %}
+
+
+
+<section id="about" class="section about">
+    <div class="content">
+        <h1>About Us</h1>
+        <p>Welcome to Melisa's Tapas Bar! At Melisa's, we invite you to savor the rich and vibrant flavors of
+            Spanish cuisine in the heart of our city. Our passion for authentic Spanish tapas drives us to create a
+            dining experience that delights the senses and captures the essence of Spanish culture. Our dedicated
+            team meticulously prepares each dish, using the finest ingredients sourced locally and from Spain. From
+            classic favorites like patatas bravas to innovative creations, every bite tells a story of tradition and
+            innovation. Beyond our delicious food, we pride ourselves on providing warm hospitality and a welcoming
+            atmosphere. Whether you're joining us for a casual meal or celebrating a special occasion, we promise an
+            unforgettable experience that transports you to the bustling streets of Spain. Join us at Melisa's Tapas
+            Bar and embark on a culinary journey that celebrates the spirit of Spanish cuisine. ¡Buen provecho!</p>
+    </div>
+</section>
+
+<section id="events" class="section events">
+    <div class="content">
+        <h1>Events</h1>
+        <p>Check out our upcoming events and specials. Join us for live music nights, wine tastings, and more! **
+            COMING SOON **</p>
+    </div>
+</section>
+
+{% endblock%}

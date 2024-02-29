@@ -12,12 +12,12 @@ def reservation_form(request):
             return redirect('reservation_success')
     else:
         form = ReservationForm()
-    return render(request, 'reservation_form.html', {'form': form})
+    return render(request, 'reservations/reservation_form.html', {'form': form})
 
 def reservation_success(request):
     # Son eklenen rezervasyonu al
     latest_reservation = Reservation.objects.latest('id')
-    return render(request, 'reservation_success.html', {'reservation': latest_reservation})
+    return render(request, 'reservations/reservation_success.html', {'reservation': latest_reservation})
 
 def handle_form_submission(request):
     if request.method == 'POST':
@@ -27,7 +27,7 @@ def handle_form_submission(request):
             reservation.save()
             return redirect('reservation_success')
 
-    return render(request, 'reservation_form.html', {'form': ReservationForm()})
+    return render(request, 'reservations/reservation_form.html', {'form': ReservationForm()})
 
 def view_reservation(request):
     searched_name = None
@@ -43,7 +43,7 @@ def view_reservation(request):
         # Eğer POST isteği değilse, tüm rezervasyonları getir
         reservations = Reservation.objects.all()
 
-    return render(request, 'view_reservation.html', {'reservations': reservations, 'searched_name': searched_name})
+    return render(request, 'reservations/view_reservation.html', {'reservations': reservations, 'searched_name': searched_name})
 
 def cancel_reservation(request, reservation_id):
     # İlgili rezervasyonu bul
@@ -56,4 +56,4 @@ def cancel_reservation(request, reservation_id):
         reservation.delete()
         return redirect('view_reservation')
 
-    return render(request, 'cancel_reservation.html', {'reservation': reservation})
+    return render(request, 'reservations/cancel_reservation.html', {'reservation': reservation})

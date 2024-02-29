@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Required meta tags {% endcomment %}
+
+    {% comment %} Favicon {% endcomment %}
+
+    {% endblock%}
+
+    {% block extra_meta %}
+    {% endblock%}
+
+    {% block corecss %}
+    {% comment %} Link to css {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock%}
+
+    {% block extra_css %}
+    {% endblock%}
+
+
+    {% block corejs %}
+    {% comment %} Link to fontawesome {% endcomment %}
+    <script src="https://kit.fontawesome.com/7a0af02583.js" crossorigin="anonymous"></script>
+    {% endblock%}
+
+    {% block extra_js %}
+    {% endblock%}
+
+    <title>Melisa's Tapas Bar {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Melisa's Tapas Bar</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="{% url 'reservation_form' %}">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="content__container">
+            {% if messages %}
+            <div class="message-container" id="messages-notes">
+                {% for message in messages %}
+                <div class="message-container__message">
+                    <p class="message-container__message--text">{{ message }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% block page_header %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    {% comment %} Footer {% endcomment %}
+
+    {% block postloadjs %}
+    <script src="{% static 'js/base.js' %}"></script>
+    {% endblock %}
+
+
+</body>
+
+</html>
