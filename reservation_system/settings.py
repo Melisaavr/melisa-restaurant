@@ -27,7 +27,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # DEBUG = os.environ["DEBUG"] == 'True'
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1",]
+ALLOWED_HOSTS = ["127.0.0.1", 'melisa-restaurant-5bc1ccd1b2b4.herokuapp.com']
 
 
 # Application definition
